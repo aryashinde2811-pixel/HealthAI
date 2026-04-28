@@ -1,15 +1,15 @@
 /**
- * HealthAI — Gemini AI Service
+ * MediCore — Gemini AI Service
  * Wraps Google Gemini 1.5 Flash API for all AI features across the platform.
  * Requires config.js to be loaded first.
  */
 
 const GeminiService = (() => {
-    const BASE_URL = `${HEALTHAI_CONFIG.GEMINI_API_URL}${HEALTHAI_CONFIG.GEMINI_MODEL}:generateContent?key=${HEALTHAI_CONFIG.GEMINI_API_KEY}`;
+    const BASE_URL = `${MEDICORE_CONFIG.GEMINI_API_URL}${MEDICORE_CONFIG.GEMINI_MODEL}:generateContent?key=${MEDICORE_CONFIG.GEMINI_API_KEY}`;
 
     // Log the URL being used (without the key) whenever the service loads
-    console.log('[GeminiService] Endpoint:', `${HEALTHAI_CONFIG.GEMINI_API_URL}${HEALTHAI_CONFIG.GEMINI_MODEL}:generateContent`);
-    console.log('[GeminiService] Model:', HEALTHAI_CONFIG.GEMINI_MODEL);
+    console.log('[GeminiService] Endpoint:', `${MEDICORE_CONFIG.GEMINI_API_URL}${MEDICORE_CONFIG.GEMINI_MODEL}:generateContent`);
+    console.log('[GeminiService] Model:', MEDICORE_CONFIG.GEMINI_MODEL);
 
     async function callGemini(prompt, systemContext = '') {
         try {
@@ -50,7 +50,7 @@ const GeminiService = (() => {
 
     // ── Feature 1: Emergency Triage Assessment ────────────────────────────────
     async function analyzeEmergency(symptoms, emergencyType = '', age = '', existingConditions = '') {
-        const system = `You are an AI medical triage assistant for HealthAI, an emergency healthcare platform in India.
+        const system = `You are an AI medical triage assistant for MediCore, an emergency healthcare platform in India.
 Your role is to help assess the severity of an emergency and provide structured, factual triage guidance.
 You are NOT a doctor and always recommend professional medical attention.
 Always be calm, clear and concise. Format your response as valid JSON.`;
@@ -95,7 +95,7 @@ Respond ONLY with this JSON structure (no markdown, no extra text):
 
     // ── Feature 2: AI Triage Chat ─────────────────────────────────────────────
     async function triageChat(userMessage, conversationHistory = []) {
-        const system = `You are HealthAI's compassionate AI triage assistant.
+        const system = `You are MediCore's compassionate AI triage assistant.
 You are helping users in potential medical emergencies to understand their situation and guide them.
 Be calm, empathetic, and clear. Ask relevant follow-up questions if needed.
 Provide first-aid guidance where appropriate.
@@ -104,7 +104,7 @@ Keep responses concise (2-4 sentences). Do not use bullet points or markdown.
 If the user seems in immediate danger, immediately say to call 112 (India emergency number).`;
 
         const history = conversationHistory.map(m =>
-            `${m.role === 'user' ? 'User' : 'HealthAI'}: ${m.text}`
+            `${m.role === 'user' ? 'User' : 'MediCore'}: ${m.text}`
         ).join('\n');
 
         const prompt = history
@@ -160,7 +160,7 @@ Predict the next 6 hours of patient demand and respond ONLY with this JSON (no m
 
     // ── Feature 4: Admin Insights ─────────────────────────────────────────────
     async function generateAdminInsights(metricsData) {
-        const system = `You are a healthcare intelligence AI for HealthAI's admin dashboard.
+        const system = `You are a healthcare intelligence AI for MediCore's admin dashboard.
 Generate actionable, concise insights for hospital network administrators in India.
 Focus on resource optimization, patient flow, and emergency readiness.`;
 
@@ -224,3 +224,4 @@ Respond ONLY with a JSON array of short action strings:
         getFirstAidTips,
     };
 })();
+

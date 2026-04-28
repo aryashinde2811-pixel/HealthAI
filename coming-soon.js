@@ -67,8 +67,9 @@ document.addEventListener('DOMContentLoaded', () => {
     attachComingSoonListeners();
     
     // Export globally in case we need to re-attach after dynamic DOM updates
-    window.HealthAIComingSoon = {
+    window.MediCoreComingSoon = {
         reInit: attachComingSoonListeners,
         show: () => showComingSoon({preventDefault:()=>{}, stopPropagation:()=>{}})
     };
 });
+

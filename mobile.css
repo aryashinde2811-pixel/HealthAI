@@ -1,5 +1,5 @@
 /* =============================================
-   HealthAI — Mobile-First Shared Overrides
+   MediCore — Mobile-First Shared Overrides
    Fixes mixed-layout pages for all screen sizes
    ============================================= */
 
@@ -199,3 +199,4 @@
     align-items: center;
     gap: 10px;
 }
+

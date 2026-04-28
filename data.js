@@ -1,9 +1,9 @@
 /**
- * HealthAI Platform — Centralized Data Simulation Engine
+ * MediCore Platform — Centralized Data Simulation Engine
  * Provides realistic, live-updating data across all pages.
  */
 
-const HealthAIData = (() => {
+const MediCoreData = (() => {
 
     // ── Hospital Data ─────────────────────────────────────────────────────────
     const hospitals = [
@@ -153,7 +153,7 @@ const HealthAIData = (() => {
         systemMetrics.emergenciesToday += Math.random() > 0.85 ? 1 : 0;
 
         // Trigger custom event for any page listening
-        window.dispatchEvent(new CustomEvent('healthai-data-updated', { detail: { hospitals, systemMetrics, patientQueue } }));
+        window.dispatchEvent(new CustomEvent('medicore-data-updated', { detail: { hospitals, systemMetrics, patientQueue } }));
     }
 
     // ── Public API ────────────────────────────────────────────────────────────
@@ -181,3 +181,4 @@ const HealthAIData = (() => {
         getOccupiedICU() { return hospitals.reduce((s, h) => s + h.occupiedICU, 0); },
     };
 })();
+

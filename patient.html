@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HealthAI | Patient Portal</title>
+    <title>MediCore | Patient Portal</title>
     <meta name="description" content="Find nearby hospitals, track ambulances, and request emergency help instantly.">
     <link
         href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@600;700;800&display=swap"
@@ -25,9 +25,9 @@
         </a>
         <div class="app-title">
             <span class="brand-dot"></span>
-            HealthAI
+            MediCore
         </div>
-        <button class="app-icon-btn" id="profile-btn" aria-label="Logout" onclick="HealthAIAuth.logout()">
+        <button class="app-icon-btn" id="profile-btn" aria-label="Logout" onclick="MediCoreAuth.logout()">
             <i class="fas fa-sign-out-alt"></i>
         </button>
     </div>
@@ -366,8 +366,8 @@
     <script src="coming-soon.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', () => {
-            HealthAIAuth.guardPage(['patient']);
-            const user = HealthAIAuth.getUser();
+            MediCoreAuth.guardPage(['patient']);
+            const user = MediCoreAuth.getUser();
             if (user) {
                 // Get the first name for the greeting
                 const firstName = user.name.split(' ')[0];

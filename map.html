@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HealthAI | Live Resource Map</title>
+    <title>MediCore | Live Resource Map</title>
     <meta name="description" content="Real-time map of hospital resources, ambulance positions, and emergency capacity across the network.">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
@@ -234,7 +234,7 @@
     }
 
     // Ambulance animation state
-    const ambulancePositions = HealthAIData.ambulances.map(a => ({
+    const ambulancePositions = MediCoreData.ambulances.map(a => ({
         ...a, animLat: a.lat, animLng: a.lng,
         targetLat: a.lat + (Math.random() - 0.5) * 0.02,
         targetLng: a.lng + (Math.random() - 0.5) * 0.02,
@@ -263,7 +263,7 @@
         }
 
         // Hospitals
-        HealthAIData.hospitals.forEach(h => {
+        MediCoreData.hospitals.forEach(h => {
             const pos = latLngToXY(h.lat, h.lng);
             const color = h.status === 'available' ? '#22c55e' : h.status === 'moderate' ? '#f59e0b' : '#ef4444';
 
@@ -337,10 +337,10 @@
 
     // ── Stats ─────────────────────────────────────────────────────────────────
     function updateStats() {
-        const avail = HealthAIData.hospitals.filter(h => h.status === 'available').length;
-        const freeBeds = HealthAIData.getTotalBeds() - HealthAIData.getTotalOccupied();
-        const freeICU = HealthAIData.getTotalICU() - HealthAIData.getOccupiedICU();
-        const ambFree = HealthAIData.ambulances.filter(a => a.status === 'available').length;
+        const avail = MediCoreData.hospitals.filter(h => h.status === 'available').length;
+        const freeBeds = MediCoreData.getTotalBeds() - MediCoreData.getTotalOccupied();
+        const freeICU = MediCoreData.getTotalICU() - MediCoreData.getOccupiedICU();
+        const ambFree = MediCoreData.ambulances.filter(a => a.status === 'available').length;
 
         document.getElementById('stat-avail').textContent = avail;
         document.getElementById('stat-beds').textContent = freeBeds;
@@ -357,7 +357,7 @@
     }
 
     function getFilteredHospitals() {
-        return HealthAIData.hospitals.filter(h => {
+        return MediCoreData.hospitals.filter(h => {
             if (currentFilter === 'all') return true;
             if (currentFilter === 'available') return h.status === 'available';
             if (currentFilter === 'moderate') return h.status === 'moderate';
@@ -379,8 +379,8 @@
         const hospitals = getFilteredHospitals();
 
         list.innerHTML = hospitals.map(h => {
-            const bedPct = HealthAIData.getOccupancyPct(h);
-            const icuPct = HealthAIData.getICUPct(h);
+            const bedPct = MediCoreData.getOccupancyPct(h);
+            const icuPct = MediCoreData.getICUPct(h);
             const ventPct = Math.round((h.occupiedVentilators / h.totalVentilators) * 100);
             const dotClass = `dot-${h.status}`;
             const freeBeds = h.totalBeds - h.occupiedBeds;
@@ -451,14 +451,14 @@
 
     // ── Init ──────────────────────────────────────────────────────────────────
     window.addEventListener('load', () => {
-        HealthAIAuth.guardPage([]); // Allow any logged-in role
+        MediCoreAuth.guardPage([]); // Allow any logged-in role
         updateStats();
         renderHospList();
         animateAmbulances();
 
         // Live data updates
-        HealthAIData.startSimulation(8000);
-        window.addEventListener('healthai-data-updated', () => {
+        MediCoreData.startSimulation(8000);
+        window.addEventListener('medicore-data-updated', () => {
             updateStats();
             renderHospList();
         });
@@ -468,3 +468,4 @@
 </script>
 </body>
 </html>
+

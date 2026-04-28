@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HealthAI | Smart Healthcare Resource Allocation System</title>
+    <title>MediCore | Smart Healthcare Resource Allocation System</title>
     <meta name="description"
         content="AI-powered healthcare resource allocation system that optimizes hospital beds, ICU units, and ambulance dispatch in real-time.">
     <link
@@ -24,7 +24,7 @@
                 <div class="brand-icon">
                     <i class="fas fa-heartbeat"></i>
                 </div>
-                <span class="brand-name">HealthAI</span>
+                <span class="brand-name">MediCore</span>
             </div>
             <div class="nav-links">
                 <a href="#features" class="nav-link">Features</a>
@@ -180,7 +180,7 @@
     <section class="features-section" id="features">
         <div class="section-container">
             <div class="section-header">
-                <span class="section-tag">Why HealthAI</span>
+                <span class="section-tag">Why MediCore</span>
                 <h2 class="section-title">Built for the Future of <span class="gradient-text">Emergency
                         Healthcare</span></h2>
                 <p class="section-subtitle">Our platform combines cutting-edge AI with real-time data to ensure every
@@ -255,7 +255,7 @@
         <div class="section-container">
             <div class="section-header">
                 <span class="section-tag">Process</span>
-                <h2 class="section-title">How <span class="gradient-text">HealthAI</span> Works</h2>
+                <h2 class="section-title">How <span class="gradient-text">MediCore</span> Works</h2>
             </div>
             <div class="steps-container">
                 <div class="step-line"></div>
@@ -350,7 +350,7 @@
                 <div class="brand-icon">
                     <i class="fas fa-heartbeat"></i>
                 </div>
-                <span class="brand-name">HealthAI</span>
+                <span class="brand-name">MediCore</span>
                 <p>Smart Healthcare Resource Allocation System</p>
                 <p class="footer-sub">Built for Google Solution Challenge 2024</p>
             </div>
@@ -372,7 +372,7 @@
             </div>
         </div>
         <div class="footer-bottom">
-            <p>© 2024 HealthAI — Smart Healthcare Resource Allocation System. Built for Google Solution Challenge.</p>
+            <p>© 2024 MediCore — Smart Healthcare Resource Allocation System. Built for Google Solution Challenge.</p>
         </div>
     </footer>
 
@@ -381,14 +381,14 @@
     <script>
         // Update navbar based on auth state
         document.addEventListener('DOMContentLoaded', () => {
-            HealthAIAuth.renderLandingNav();
+            MediCoreAuth.renderLandingNav();
         });
 
         function handleHeroStart(e) {
             e.preventDefault();
-            const user = HealthAIAuth.getUser();
+            const user = MediCoreAuth.getUser();
             if (user) {
-                window.location.href = HealthAIAuth.getDashboard(user.role);
+                window.location.href = MediCoreAuth.getDashboard(user.role);
             } else {
                 window.location.href = 'login.html';
             }
@@ -396,9 +396,9 @@
 
         function handleViewDash(e) {
             e.preventDefault();
-            const user = HealthAIAuth.getUser();
+            const user = MediCoreAuth.getUser();
             if (user) {
-                window.location.href = HealthAIAuth.getDashboard(user.role);
+                window.location.href = MediCoreAuth.getDashboard(user.role);
             } else {
                 window.location.href = 'login.html';
             }

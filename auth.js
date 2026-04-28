@@ -1,9 +1,9 @@
 /**
- * HealthAI Auth Manager
+ * MediCore Auth Manager
  * Lightweight localStorage-based auth simulation for the demo.
  */
 (function () {
-    const STORAGE_KEY = 'healthai_user';
+    const STORAGE_KEY = 'medicore_user';
 
     const ROLE_CONFIG = {
         patient: {
@@ -32,7 +32,7 @@
         },
     };
 
-    window.HealthAIAuth = {
+    window.MediCoreAuth = {
         /** Save user to localStorage */
         setUser(role, name, email, extra = {}) {
             const user = { role, name, email, extra, loginTime: Date.now() };
@@ -139,7 +139,7 @@
                     <div class="nav-user-chip" id="nav-user-chip">
                         <div class="nav-avatar" style="background:linear-gradient(135deg,${cfg.color || '#2563EB'}cc,${cfg.color || '#2563EB'})">${initials}</div>
                         <span>${user.name.split(' ')[0]}</span>
-                        <button onclick="HealthAIAuth.logout()" class="btn btn-sm nav-logout-btn" id="nav-logout-btn" title="Logout">
+                        <button onclick="MediCoreAuth.logout()" class="btn btn-sm nav-logout-btn" id="nav-logout-btn" title="Logout">
                             <i class="fas fa-sign-out-alt"></i>
                         </button>
                     </div>`;
@@ -198,3 +198,4 @@
         },
     };
 })();
+

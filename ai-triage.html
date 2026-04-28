@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HealthAI | AI Triage Assistant</title>
+    <title>MediCore | AI Triage Assistant</title>
     <meta name="description"
         content="AI-powered emergency symptom assessment. Describe your symptoms and get instant triage guidance.">
     <link
@@ -630,7 +630,7 @@
         <!-- AI Hero -->
         <div class="ai-hero-strip">
             <div class="ai-avatar-ring"><i class="fas fa-stethoscope"></i></div>
-            <h2>HealthAI Triage Assistant</h2>
+            <h2>MediCore Triage Assistant</h2>
             <p>Describe your symptoms — I'll assess severity & guide you</p>
         </div>
 
@@ -648,7 +648,7 @@
                 <div class="msg-avatar ai-avatar-icon"><i class="fas fa-robot"></i></div>
                 <div>
                     <div class="msg-bubble ai-bubble">
-                        Hello! I'm your HealthAI Triage Assistant powered by Gemini. I'm here to help assess your
+                        Hello! I'm your MediCore Triage Assistant powered by Gemini. I'm here to help assess your
                         situation and provide guidance. Please describe what's happening — symptoms, when they started,
                         and how severe they feel.
                     </div>
@@ -708,8 +708,8 @@
         let lastTriageResult = null;
 
         document.addEventListener('DOMContentLoaded', () => {
-            HealthAIAuth.guardPage(['patient', 'admin']);
-            console.log("AI Triage Initialized with model:", HEALTHAI_CONFIG.GEMINI_MODEL);
+            MediCoreAuth.guardPage(['patient', 'admin']);
+            console.log("AI Triage Initialized with model:", MEDICORE_CONFIG.GEMINI_MODEL);
         });
 
         function getTime() {
@@ -894,3 +894,4 @@
 </body>
 
 </html>
+

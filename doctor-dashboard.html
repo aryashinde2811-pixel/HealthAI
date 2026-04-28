@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HealthAI | Doctor Dashboard</title>
+    <title>MediCore | Doctor Dashboard</title>
     <meta name="description" content="Doctor dashboard for managing appointments, emergencies, and patient queues.">
     <link
         href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@600;700;800&display=swap"
@@ -24,7 +24,7 @@
             <div class="sidebar-brand">
                 <div class="brand-icon-sm"><i class="fas fa-heartbeat"></i></div>
                 <div class="brand-text">
-                    <h3>HealthAI</h3>
+                    <h3>MediCore</h3>
                     <p>Doctor Portal</p>
                 </div>
             </div>
@@ -56,7 +56,7 @@
                         <p data-auth-role>Cardiologist · ID #DOC-1042</p>
                     </div>
                 </div>
-                <button class="sidebar-logout-btn" onclick="HealthAIAuth.logout()">
+                <button class="sidebar-logout-btn" onclick="MediCoreAuth.logout()">
                     <i class="fas fa-sign-out-alt"></i> Logout
                 </button>
             </div>
@@ -320,9 +320,9 @@
     <script src="dashboard.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', () => {
-            HealthAIAuth.guardPage(['doctor', 'admin']);
-            HealthAIAuth.injectUserUI();
-            HealthAIAuth.initMobileSidebar();
+            MediCoreAuth.guardPage(['doctor', 'admin']);
+            MediCoreAuth.injectUserUI();
+            MediCoreAuth.initMobileSidebar();
         });
 
         let isAvailable = true;

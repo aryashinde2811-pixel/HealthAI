@@ -1,5 +1,5 @@
 /* =============================================
-   HealthAI Login Page Styles
+   MediCore Login Page Styles
    Mobile-first, glassmorphism design
    ============================================= */
 
@@ -408,3 +408,4 @@ select.form-input option {
     .role-icon { width: 38px; height: 38px; font-size: 1rem; }
     .form-row { grid-template-columns: 1fr; }
 }
+

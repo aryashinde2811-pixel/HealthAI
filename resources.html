@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HealthAI | Resource Overview</title>
+    <title>MediCore | Resource Overview</title>
     <meta name="description" content="Real-time healthcare resource allocation and utilization overview.">
     <link
         href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@600;700;800&display=swap"
@@ -24,7 +24,7 @@
             <div class="sidebar-brand">
                 <div class="brand-icon-sm"><i class="fas fa-heartbeat"></i></div>
                 <div class="brand-text">
-                    <h3>HealthAI</h3>
+                    <h3>MediCore</h3>
                     <p>Resource Management</p>
                 </div>
             </div>
@@ -50,7 +50,7 @@
                         <p data-auth="role-label">System Administrator</p>
                     </div>
                 </div>
-                <button class="logout-btn" onclick="HealthAIAuth.logout()" title="Logout" style="background:none; border:none; color:#fc8181; cursor:pointer; font-size:1.1rem; padding:8px;">
+                <button class="logout-btn" onclick="MediCoreAuth.logout()" title="Logout" style="background:none; border:none; color:#fc8181; cursor:pointer; font-size:1.1rem; padding:8px;">
                     <i class="fas fa-sign-out-alt"></i>
                 </button>
             </div>
@@ -408,8 +408,8 @@
     <script src="dashboard.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', () => {
-            HealthAIAuth.guardPage(['admin']);
-            HealthAIAuth.injectUserUI();
+            MediCoreAuth.guardPage(['admin']);
+            MediCoreAuth.injectUserUI();
 
             // Animate progress bars
             const bars = [
